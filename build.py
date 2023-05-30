@@ -1,24 +1,80 @@
 
-top_side_panel = open('./templates/top.html').read()
-file_index = open('./content/index.html').read()
-bottom_side_panel = open('./templates/bottom.html').read()
-full_index = top_side_panel + file_index + bottom_side_panel
-open('./docs/index.html', 'w+').write(full_index)
+pages = [
+        {
+            "filename": "content/index.html",
+            "output": "docs/index.html",
+            "title": "About Me",
+            "href": "./index.html",
+            "link_title": "About",
+        },
+        {
+            "filename": "content/education.html",
+            "output": "docs/education.html",
+            "title": "My education",
+            "href": "./education.html",
+            "link_title": "Education",
+        },
+        {
+            "filename": "content/experience.html",
+            "output": "docs/experience.html",
+            "title": "My experience",
+            "href": "./experience.html",
+            "link_title": "Experience",
+        },
+        {
+            "filename": "content/projects.html",
+            "output": "docs/projects.html",
+            "title": "My projects",
+            "href": "./projects.html",
+            "link_title": "Projects",
+        },
+    ]
+#Phase 4: Function refactor
+def generate_title(page):
+    template = open('./templates/base.html').read()
+    int_page = template.replace("{{title}}", page["title"])
+    return int_page
 
-#Building education.html
+#Phase 5: Advanced templating
+def generate_nav_list():
+    list_template = ''
+    for page in pages:
+        list_template += f'<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{ page["href"] }">{ page["link_title"] }</a></li>'
+    return list_template
 
-file_edu = open('./content/education.html').read()
-full_edu = top_side_panel + file_edu + bottom_side_panel
-open('./docs/education.html', 'w+').write(full_edu)
+def apply_template(page, int_page):
+    file_page = open(page["filename"]).read()
+    #Phase 3 - String replacement templating
+    #String replace in base.html page
+    finished_page = int_page.replace("{{content}}", file_page)
+    new_nav = generate_nav_list()
+    finished_page = finished_page.replace("{{nav}}", new_nav) 
+        
+    return finished_page
 
-#Building experience.html
-file_exp = open('./content/experience.html').read()
-full_exp = top_side_panel + file_exp + bottom_side_panel
-open('./docs/experience.html', 'w+').write(full_exp)
+# Phase 1: Code is in "main" function
+def main():
 
-#Building projects.html
-file_proj = open('./content/projects.html').read()
-full_proj = top_side_panel + file_proj + bottom_side_panel
-open('./docs/projects.html', 'w+').write(full_proj)
+    # Phase 2: Using lists to store information of all content pages
+    template = open('./templates/base.html').read()
+    
+    # for page in pages:
+    #     file_page = open(page["filename"]).read()
+    #     full_page = top_side_panel + file_page + bottom_side_panel
+    #     open(page["output"], 'w+').write(full_page)
 
+    
+    # for page in pages:
+    #     #Read content of content HTML page
+    #     file_page = open(page["filename"]).read()
 
+    #     #String replace in base.html page
+    #     finished_page = template.replace("{{content}}", file_page)
+    #     open(page["output"], 'w+').write(finished_page)
+
+    for page in pages:
+        int_html = generate_title(page) #Function call
+        resulting_html = apply_template(page, int_html) 
+        open(page["output"], 'w+').write(resulting_html)
+
+main()
