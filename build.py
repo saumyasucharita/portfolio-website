@@ -36,10 +36,13 @@ def generate_title(page):
     return int_page
 
 #Phase 5: Advanced templating
-def generate_nav_list():
+def generate_nav_list(selected_page):
     list_template = ''
     for page in pages:
-        list_template += f'<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{ page["href"] }">{ page["link_title"] }</a></li>'
+        if selected_page == page["href"]:
+            list_template += f'<li class="nav-item"><a class="nav-link js-scroll-trigger navactive" href="{ page["href"] }">{ page["link_title"] }</a></li>'
+        else:
+            list_template += f'<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{ page["href"] }">{ page["link_title"] }</a></li>'
     return list_template
 
 def apply_template(page, int_page):
@@ -47,7 +50,8 @@ def apply_template(page, int_page):
     #Phase 3 - String replacement templating
     #String replace in base.html page
     finished_page = int_page.replace("{{content}}", file_page)
-    new_nav = generate_nav_list()
+
+    new_nav = generate_nav_list(page["href"])
     finished_page = finished_page.replace("{{nav}}", new_nav) 
         
     return finished_page
@@ -73,7 +77,7 @@ def main():
     #     open(page["output"], 'w+').write(finished_page)
 
     for page in pages:
-        int_html = generate_title(page) #Function call
+        int_html = generate_title(page) #Intermediate html with title place holder replaced
         resulting_html = apply_template(page, int_html) 
         open(page["output"], 'w+').write(resulting_html)
 

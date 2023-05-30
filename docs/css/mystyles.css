@@ -30,6 +30,9 @@ a {
 a:hover {
   color: #5792B5;
 }
+a.navactive {
+ color : #b59357;
+}
 h2, h3, h5{
   color:  #FFFFF0;
 }
