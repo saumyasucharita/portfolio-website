@@ -30,9 +30,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                   {{nav}}
-                   <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li> 
-                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li> -->
+                   {% for page in pages %}
+						{% if selected_page == page.href %}
+							<li class="nav-item"><a class="nav-link js-scroll-trigger navactive" href="{{page.href}}">{{ page.title }}</a></li>
+						{% else %}
+							<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.href }}">{{ page.title }}</a></li>
+						{% endif %}
+					{% endfor %}
                 </ul>
             </div>
         </nav>
