@@ -5,57 +5,61 @@ import markdown
 from jinja2 import Template
 
 def command_build():
+    #Return all the markdown files in the content folder
     all_html_files = glob.glob("content/*.md")
     pages = generate_pages(all_html_files)
     
-    new_pages = []
     for page in pages:
-        new_page = convert_md_html(page)
-        new_pages.append(new_page)
+        convert_md_html(page)
+       
     #Reference: https://pythonhow.com/how/sort-a-list-of-dictionaries-by-a-value-of-the-dictionary/
-    new_pages = sorted(new_pages, key=operator.itemgetter('order'))
+    pages.sort(key=operator.itemgetter('order'))
 
-    for new_page in new_pages:
-        print("Building ", new_page['title'])
-        resulting_html = apply_template(new_page, new_pages) 
+    for new_page in pages:
+        resulting_html = apply_template(new_page, pages) 
         open(new_page["output"], 'w+').write(resulting_html)    
 
+#Function to add a new html page by user input
 def command_new():
     new_filename = input('Title of new page?')
     sanitized_str = re.sub(r'\W+', '_', new_filename).lower()
     open("content/"+sanitized_str+".html","w+").write("<title>"+sanitized_str+"</title>")
 
+#Return a list of dictionaries having the meta data of the html pages 
 def generate_pages(files):
     pages = []
+    #Loop through each file in the content folder
     for file in files:
         output = file.replace('content', 'docs').replace('md', 'html')
         href = './'+output.split('/')[1]
-        title = file.split('/')[1].split('.')[0].capitalize()
-        if title == "Index":
-            title = "About"
+        link_title = file.split('/')[1].split('.')[0].capitalize()
+        if link_title == "Index":
+            link_title = "About"
 
         pages.append({
         "filename": file,
-        "title": title,
         "output": output,
         "href": href,
-        "html": None,
-        "order": None,
+        "link_title": link_title,
         })  
 
     return pages
 
+#Read the content of the markdown files and convert those to html
 def convert_md_html(page):
-    
+   
     file_page = open(page["filename"]).read()
     #content_html = markdown.markdown(file_page)
     md = markdown.Markdown(extensions=["markdown.extensions.meta"])
     content_html = md.convert(file_page)
     order = md.Meta["order"][0]
+    title = md.Meta["title"][0]
+    #Update the dictionary with metadata from the markdown files
+    page['title'] = title
     page['html'] = content_html
     page['order'] = order
-    return page
-
+    
+#Use jinja templating to replace placeholders in base.html with html content
 def apply_template(page, pages):
 
     template_html = open('./templates/base.html').read()

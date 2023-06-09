@@ -1,4 +1,6 @@
 Order: 2
+Title: My education
+---
 <section class="resume-section" id="education">
     <div class="resume-section-content">
         <h1 class="mb-0">Education</h2>

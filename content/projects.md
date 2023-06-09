@@ -1,4 +1,6 @@
 Order: 4
+Title: My personal and college projects
+---
 <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">PROJECTS</h2>

@@ -32,9 +32,9 @@
                 <ul class="navbar-nav">
                    {% for page in pages %}
 						{% if selected_page == page.href %}
-							<li class="nav-item"><a class="nav-link js-scroll-trigger navactive" href="{{page.href}}">{{ page.title }}</a></li>
+							<li class="nav-item"><a class="nav-link js-scroll-trigger navactive" href="{{page.href}}">{{ page.link_title }}</a></li>
 						{% else %}
-							<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.href }}">{{ page.title }}</a></li>
+							<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.href }}">{{ page.link_title }}</a></li>
 						{% endif %}
 					{% endfor %}
                 </ul>

@@ -1,4 +1,6 @@
 Order: 1
+Title: Welcome to my personal website
+---
 <section class="resume-section" id="about">
     <div class="resume-section-content">
         <h1 class="mb-0 wide-text">

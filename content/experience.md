@@ -1,4 +1,6 @@
 Order: 3
+Title: My industry experience
+---
 <section class="resume-section" id="experience">
     <div class="resume-section-content">
         <h2 class="mb-5">Experience</h2>
