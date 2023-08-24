@@ -12,7 +12,7 @@ Title: Welcome to my personal website
                 Santa Clara Valley, California ·  <!-- (214) 517-0680 · -->
             <a href="mailto:saumya.sucharita@gmail.com">Email me</a>
         </div>
-        <p class="lead mb-5">I am looking for full-stack software engineering roles in San Francisco Bay Area or remote opportunities. Currently I am pursuing a Master's degree in computer science and undergoing training at Kickstart Coding bootcamp. Prior to this, I have 8+ years of experience in designing, developing, implementing, testing, and delivering enterprise applications in telecom domain.</p>
+        <p class="lead mb-5">I am looking for full-stack/backend software engineering roles in San Francisco Bay Area or remote opportunities. Currently, I am pursuing a Master's degree in computer science at Villanova University, PA(Expected graduation: Dec 2023). Prior to this, I have 8+ years of experience in designing, developing, implementing, testing, and delivering enterprise applications in the telecom domain.</p>
         <div class="social-icons">
             <a class="social-icon" href="https://www.linkedin.com/in/saumya-sucharita/"><i class="fab fa-linkedin-in"></i></a>
             <a class="social-icon" href="https://github.com/saumyasucharita"><i class="fab fa-github"></i></a>
