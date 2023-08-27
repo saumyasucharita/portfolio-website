@@ -6,7 +6,7 @@ Title: My personal and college projects
                     <h2 class="mb-5">PROJECTS</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0"><a href="https://github.com/saumyasucharita/diet-planner">Diet Planner App</a></h5>
+                            <h5 class="mb-0"><a href="https://github.com/saumyasucharita/diet-planner">PlanMyMeal</a></h5>
                             <p>Built a website where users can search for recipes as per their nutritional requirements. </p>
                             <p>Implemented CRUD operations in Django ORM to save recipes with a date on the calendar</p>
                             <p>Technologies used: Python, Django, Pygal</p>
@@ -17,7 +17,7 @@ Title: My personal and college projects
                         <div class="flex-grow-1">
                             <h5 class="mb-0"><a href="https://github.com/saumyasucharita/Agriculture-Data-Analysis">Agriculture Data Analysis</a></h5>
                             <p>Determined top agricultural nations using Linear Regression.</p>
-                            <p>Technologies used: Python, Pandas, Seaborn, Matplotlib</p>
+                            <p>Technologies used: Python, Pandas, Seaborn, Scikit-Learn</p>
                             <p>Dataset used: Global Food & Agriculture Statistics(Kaggle)</p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">Villanova University</span></div>
