@@ -34,11 +34,10 @@ Title: My industry experience
                     This project expanded the automation rate up to 80% whereas previously it was only 25% automated.</p>
                 <!-- Create a list-->
                 <ul>
-                    <li> Analyzed the specifications provided by the client and systems engineer </li>
-                    <li> Designed, built and maintained executable workflows </li>
-                    <li> Wrote unit and integration tests to test all desired functionality using JUnit, Mockito </li>
-                    <li> Performed troubleshooting and resolved the reported issues by system testing team </li>
-                    <li> Produced low level design documentation </li>
+                    <li> Collaborated with system engineers to outline project objectives and ensure that software designs aligned with client specifications throughout the entire software development life cycle </li>
+                    <li> Designed, built and maintained executable workflows in ActiveVOS BPM tool</li>
+                    <li> Performed troubleshooting and promptly resolved issues reported by the system testing team to maintain the project deadlines </li>
+                    <li> Produced comprehensive low level design documentation </li>
                 </ul>
             </div>
             <div class="flex-shrink-0"><span class="text-primary">2012 - 2016</span></div>
