@@ -7,19 +7,19 @@ Title: My personal and college projects
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h5 class="mb-0"><a href="https://github.com/saumyasucharita/diet-planner">PlanMyMeal</a></h5>
-                            <p>Built a website where users can search for recipes as per their nutritional requirements. </p>
-                            <p>Implemented CRUD operations in Django ORM to save recipes with a date on the calendar</p>
+                            <p>Built a website where users can search for recipes using Spoonacular <b>REST API</b> per their nutritional requirements. </p>
+                            <p>Implemented CRUD operations in Django ORM to allow users to assign saved recipes to specific dates on their calendar</p>
                             <p>Technologies used: Python, Django, Pygal</p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">Kickstart Coding</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0"><a href="https://github.com/saumyasucharita/Agriculture-Data-Analysis">Agriculture Data Analysis</a></h5>
-                            <p>Analysed Global Food & Agriculture Statistics to predict future trends in Gross Production using Linear Regression</p>
-							<p>Performed Multivariate Regression to find a correlation between the various factors affecting agricultural production of countries</p>
-                            <p>Technologies used: Python, Pandas, Seaborn, Scikit-Learn</p>
-                            <p>Dataset used: Global Food & Agriculture Statistics(Kaggle),  https://climateknowledgeportal.worldbank.org/download-data, 
+                            <h5 class="mb-0"><a href="https://github.com/saumyasucharita/Agriculture-Data-Analysis">Agriculture Data Analysis: Global hunger reduction</a></h5>
+                            <p>Analyzed Global Food & Agriculture Statistics(FAOSTAT) to find dominant factors affecting agricultural yield in countries having high global hunger index</p>
+							<p>Performed <b>correlation analysis</b>, <b>Linear Regression</b>, and <b>Random Forest</b> model to recommend future action plan</p>
+                            <p>Technologies used: Python, Pandas, Seaborn, Scikit-Learn, Statsmodels</p>
+                            <p>Datasets used: Food and Agriculture Organization of the United Nations(FAOSTAT) ,  https://climateknowledgeportal.worldbank.org/download-data, 
 							https://databank.worldbank.org/</p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">Villanova University</span></div>
